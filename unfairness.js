@@ -1,18 +1,14 @@
-// group :: [Number],Number -> [[Number]]
-function group(xs, k) {
-  var chunks = [];
-  for (var n = 0; n <= xs.length - k; n++) {
-    chunks.push(xs.slice(n, n + k));
-  }
-  return chunks;
-}
 
-// diff :: [[Number]] -> Number
-function diff(chunks) {
+// diff :: [[Number]],Number -> Number
+function diff(nums, k) {
   var min = Infinity;
-  for (var idx = 0, len = chunks.length; idx < len; idx += 1) {
-    var chunk = chunks[idx];
-    var delta = chunk[chunk.length - 1] - chunk[0];
+  var b = nums[idx];
+  var a = nums[idx - (k - 1)]
+
+  for (var idx = nums.length -1; idx >= k -1; idx -= 1) {
+    var b = nums[idx];
+    var a = nums[idx - (k - 1)]
+    var delta = b - a;
     if (delta < min) { min = delta; }
   }
   return min;
@@ -23,10 +19,10 @@ function processData(input) {
   var xs = input.split('\n').map(Number);
   var n = xs[0];
   var k = xs[1];
-  var chunks = group(xs.slice(2, 2 + n)
-                       .sort(function(a, b) { return a - b; }),
-                     k);
-  return String(diff(chunks))           // [[int]] -> [string]
+  var nums = xs.slice(2, 2 + n)
+                       .sort(function(a, b) { return a - b; });
+
+  return String(diff(nums, k))           // [[int]] -> [string]
 }
 
 var input = '';
@@ -35,4 +31,3 @@ process.stdin.on('data', function(data) { input += data; });
 process.stdin.on('end', function() {
   process.stdout.write(processData(input) + '\n');
 });
-
