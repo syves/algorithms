@@ -1,18 +1,3 @@
-#tree has many nodes
-class Tree
-  def initialize(size, data)
-    @size = size #array of size n
-    @data = data #array of size n
-  end
-  def size
-    @size
-  end
-  # I'd love the traversal path to be stored in an array
-  def printTree
-    @data.map {|x| x.to_s}.join(', ')
-  end
-end
-
 #nodes belong to a tree
 class Node
   def initialize(parent, lNode, rNode)
@@ -43,5 +28,4 @@ def main
   #raw input = size
   #
 end
-
 
