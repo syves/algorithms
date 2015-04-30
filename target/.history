@@ -1,0 +1,3 @@
+printLn("oh, hi")
+println("oh, hi")
+console
