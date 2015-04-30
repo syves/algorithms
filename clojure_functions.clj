@@ -146,4 +146,123 @@
 
 (defn get-full-name [people]
   (str (:first people) " " (:last people)))
- (get-full-name {:first  :last})
+ (get-full-name {:first  :laist})
+
+;vector of high temperatures for this week
+(vector 66 66 63 63 61)
+(nth [66 66 63 63 61] 0)
+(first [66 66 63])
+(rest [66 55 67])
+(count [33 55])
+(vector? [44 33])
+(defn total-bill
+ "Given subtotal of bill, return total aftet tax"
+ [subtotal] ; this is the input
+ (* 1.08 subtotal))
+
+ (defn total-with-tip
+ "Given subtotal, returns total with tax and tip"
+ [subtotal tip-pct]
+ (* 1.08 subtotal (+ 1 tip-pct)))
+
+(total-with-tip 12.50 0.18)
+(total-with-tip 50 0.18)
+
+(defn share-per-person
+"Given subtotal returns share per person"
+[subtotal tip-pct num-people]
+(/ (* 1.08 subtotal (+ 1 tip-pct)) num-people))
+
+(share-per-person 67 0.15 2)
+
+(def dine-in-orders [12.50 20 21 16 18.40])
+(def take-out-orders [6.60 6.00 7.95 6.25])
+
+(map total-bill dine-in-orders)
+(map total-bill take-out-orders)
+
+(defn add
+  [x y]
+  (+ x y))
+
+(reduce add [1 2 3])
+
+(def take-out-totals [6.48 6.48 8.586 6.75])
+(reduce add take-out-totals)
+
+(defn average
+  "returns an average of bill amounts"
+  [take-out-totals]
+  (/ (reduce add take-out-totals) (count take-out-totals)))
+
+(average take-out-totals)
+(def my-home-town "san francisco")
+
+(defn format-name
+  "formats a name, returns a single string"
+  [first-name last-name]
+  (str last-name ", " first-name)
+)
+
+(format-name "Shakrah" "Yves")
+
+(defn meaning-of-life?
+  [x]
+  (= x 42))
+
+(> 4 3)
+(>= 4 5)
+(<= -1 -2)
+
+(str "shakrah" "yves")
+
+(map (fn [x] (* 3 x)) [1 2 3])
+(reduce (fn [x y] (+ x y)) [1 2 3]);takes a function and a vectorto map over
+(reduce (fn [s1 s2] (str s1 " " s2)) ["i" "like" "peanut" "butter" "and" "jelly"])
+
+{:first "shakrah" :last "yves"}
+{:age 31 :hieght 5.52}
+
+(def name {:first "Shakrah" :last "Yves"})
+(get name :first)
+(map? name)
+
+(assoc name :middle "Lilly")
+(dissoc name :middle)
+
+(merge {:name "David"} {:nick-name "Panda"})
+(keys name)
+(vals name)
+(:first name)
+(:middle name)
+
+(def names [{:name "David"} {:nick-name "Panda"}])
+(first names)
+
+(def bio (merge name {:hometown "San Francisco"}))
+
+(def name-vector [{:first "Margaret" :last "Atwood"}
+            {:first "Doris" :last "Lessing"}
+            {:first "Ursula" :last "Le Guin"}
+            {:first "Alice" :last "Munro"}])
+
+(defn get-name-hash
+  [map]
+  (str (get map :first) " " (get map :last)))
+(get-name-hash {:first "Doris" :last "Lessing"})
+
+
+
+(defn get-names
+  "takes a vector of maps and returns a vector of names"
+  [name-vector]
+  (map get-name-hash name-vector))
+
+(get-names name-vector)
+
+
+(defn format-names
+ "Given strings concats them"
+ [map]
+ )
+
