@@ -1,6 +1,7 @@
 class Tree():
     def __init__(self):
         self.root = None
+        size = 5
 
     def __str__(self):
         if self.root:
