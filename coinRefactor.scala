@@ -2,7 +2,9 @@
 object solution {
   var cache = Map[Int, Int]()
   val denoms = List(1, 2, 5, 10, 20, 50, 100, 200)
-  cache = cache + (0 -> 1)
+  //cache = cache + (0 -> 1)
+
+  
 
   def permutations(changeDue: Int): List[List[Int]] = {
     if (changeDue == 0) {
@@ -24,9 +26,6 @@ object solution {
   def combinations(change: Int): Set[List[Int]] = {
     permutations(change).map(list => list.sorted).toSet
   }
-
-  //def sumCombos(change: Int): Int =
-    //combinations(change).size
 
   def main(args: Array[String]): Unit = {
     println(combinations(5).size)

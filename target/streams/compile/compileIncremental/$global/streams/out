@@ -1,0 +1,301 @@
+[0m[[0mdebug[0m] [0m[0m
+[0m[[0mdebug[0m] [0mInitial source changes: [0m
+[0m[[0mdebug[0m] [0m	removed:Set(/Users/syves/github.com/syves/algorithms/reactive_assignment1.scala)[0m
+[0m[[0mdebug[0m] [0m	added: Set(/Users/syves/github.com/algorithms/coinSums.scala, /Users/syves/github.com/algorithms/amicable.scala, /Users/syves/github.com/algorithms/scalaFuncs.scala, /Users/syves/github.com/algorithms/coinRefactor.scala, /Users/syves/github.com/algorithms/atomic_methods.scala, /Users/syves/github.com/algorithms/atomic_classes.scala, /Users/syves/github.com/algorithms/reactive_assignment1.scala)[0m
+[0m[[0mdebug[0m] [0m	modified: Set()[0m
+[0m[[0mdebug[0m] [0mInvalidated products: Set()[0m
+[0m[[0mdebug[0m] [0mExternal API changes: API Changes: Set()[0m
+[0m[[0mdebug[0m] [0mModified binary dependencies: Set()[0m
+[0m[[0mdebug[0m] [0mInitial directly invalidated sources: Set(/Users/syves/github.com/algorithms/coinSums.scala, /Users/syves/github.com/algorithms/amicable.scala, /Users/syves/github.com/syves/algorithms/reactive_assignment1.scala, /Users/syves/github.com/algorithms/scalaFuncs.scala, /Users/syves/github.com/algorithms/coinRefactor.scala, /Users/syves/github.com/algorithms/atomic_methods.scala, /Users/syves/github.com/algorithms/atomic_classes.scala, /Users/syves/github.com/algorithms/reactive_assignment1.scala)[0m
+[0m[[0mdebug[0m] [0m[0m
+[0m[[0mdebug[0m] [0mSources indirectly invalidated by:[0m
+[0m[[0mdebug[0m] [0m	product: Set()[0m
+[0m[[0mdebug[0m] [0m	binary dep: Set()[0m
+[0m[[0mdebug[0m] [0m	external source: Set()[0m
+[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set(/Users/syves/github.com/algorithms/coinSums.scala, /Users/syves/github.com/algorithms/amicable.scala, /Users/syves/github.com/syves/algorithms/reactive_assignment1.scala, /Users/syves/github.com/algorithms/scalaFuncs.scala, /Users/syves/github.com/algorithms/coinRefactor.scala, /Users/syves/github.com/algorithms/atomic_methods.scala, /Users/syves/github.com/algorithms/atomic_classes.scala, /Users/syves/github.com/algorithms/reactive_assignment1.scala)[0m
+[0m[[0mdebug[0m] [0mRecompiling all 7 sources: invalidated sources (8) exceeded 50.0% of all sources[0m
+[0m[[0minfo[0m] [0mCompiling 7 Scala sources to /Users/syves/github.com/algorithms/target/scala-2.10/classes...[0m
+[0m[[0mdebug[0m] [0mGetting compiler-interface from component compiler for Scala 2.10.5[0m
+[0m[[0mdebug[0m] [0mGetting compiler-interface from component compiler for Scala 2.10.5[0m
+[0m[[0mdebug[0m] [0mRunning cached compiler 3cfdb9ba, interfacing (CompilerInterface) with Scala compiler version 2.10.5[0m
+[0m[[0mdebug[0m] [0mCalling Scala compiler with arguments  (CompilerInterface):[0m
+[0m[[0mdebug[0m] [0m	-bootclasspath[0m
+[0m[[0mdebug[0m] [0m	/Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home/jre/classes:/Users/syves/.sbt/boot/scala-2.10.5/lib/scala-library.jar[0m
+[0m[[0mdebug[0m] [0m	-classpath[0m
+[0m[[0mdebug[0m] [0m	/Users/syves/github.com/algorithms/target/scala-2.10/classes[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_classes.scala:4: expected class or object definition[0m
+[0m[[31merror[0m] [0mval r = Range(0, 5)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_classes.scala:5: expected class or object definition[0m
+[0m[[31merror[0m] [0mprintln(r)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_classes.scala:7: expected class or object definition[0m
+[0m[[31merror[0m] [0mval r2 = Range(0, 5, 2)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_classes.scala:8: expected class or object definition[0m
+[0m[[31merror[0m] [0mprintln(r2)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_classes.scala:11: expected class or object definition[0m
+[0m[[31merror[0m] [0mval s = "This is an experiment".split(" ")[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_classes.scala:12: expected class or object definition[0m
+[0m[[31merror[0m] [0mprintln(s)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_classes.scala:15: expected class or object definition[0m
+[0m[[31merror[0m] [0mvar s1 = "Sally"[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_classes.scala:16: expected class or object definition[0m
+[0m[[31merror[0m] [0mvar s2 = "Sally"[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_classes.scala:17: expected class or object definition[0m
+[0m[[31merror[0m] [0mdef areEqual(arg1:String, arg2:String):String = {[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_classes.scala:24: expected class or object definition[0m
+[0m[[31merror[0m] [0mprintln(areEqual(s1, s2))[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_classes.scala:27: expected class or object definition[0m
+[0m[[31merror[0m] [0mvar s3 = "Sam"[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_classes.scala:28: expected class or object definition[0m
+[0m[[31merror[0m] [0mprintln(areEqual(s1, s3))[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_classes.scala:34: expected class or object definition[0m
+[0m[[31merror[0m] [0mval z1 = new Zebra[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_classes.scala:35: expected class or object definition[0m
+[0m[[31merror[0m] [0mprintln(z1.zebra)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_classes.scala:36: expected class or object definition[0m
+[0m[[31merror[0m] [0massert(z1.zebra == "I have stripes", "Expected 'I have stripes', Got " + z1)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_classes.scala:40: expected class or object definition[0m
+[0m[[31merror[0m] [0mval d1 = new Donkey[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_classes.scala:53: expected class or object definition[0m
+[0m[[31merror[0m] [0mval sailboat = new Sailboat[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_classes.scala:54: expected class or object definition[0m
+[0m[[31merror[0m] [0mval r3 = sailboat.raise()[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_classes.scala:55: expected class or object definition[0m
+[0m[[31merror[0m] [0massert(r3 == "Sails raised", "Expected 'Sails raised', Got " + r3)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_classes.scala:56: expected class or object definition[0m
+[0m[[31merror[0m] [0mval r4 = sailboat.lower()[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_classes.scala:57: expected class or object definition[0m
+[0m[[31merror[0m] [0mprintln(r4)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_classes.scala:58: expected class or object definition[0m
+[0m[[31merror[0m] [0massert(r4 == "Sails lowered", "Expected 'Sails lowered', Got " + r4)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:4: expected class or object definition[0m
+[0m[[31merror[0m] [0mdef multiplyByTwo(x: Int): Int = {[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:7: expected class or object definition[0m
+[0m[[31merror[0m] [0mval r = multiplyByTwo(5) //method call stored in val[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:8: expected class or object definition[0m
+[0m[[31merror[0m] [0mprintln(r)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:9: expected class or object definition[0m
+[0m[[31merror[0m] [0mprintln(multiplyByTwo(2))[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:11: expected class or object definition[0m
+[0m[[31merror[0m] [0mdef addMultiply(x: Int, y: Double, s: String):Double = {[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:16: expected class or object definition[0m
+[0m[[31merror[0m] [0m"""maybe we want to keep expression seperate from print because[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:19: expected class or object definition[0m
+[0m[[31merror[0m] [0mval r2: Double = addMultiply(7,9, "inside multiply")[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:20: expected class or object definition[0m
+[0m[[31merror[0m] [0mprintln(r2)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:23: expected class or object definition[0m
+[0m[[31merror[0m] [0mdef test(x:Int, y:Int, s:String, expected:Double): Unit = {[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:29: expected class or object definition[0m
+[0m[[31merror[0m] [0mtest(7, 9, "Inside addMultiply", 33.6)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:33: expected class or object definition[0m
+[0m[[31merror[0m] [0mdef getSquare(num: Int): Int = {[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:36: expected class or object definition[0m
+[0m[[31merror[0m] [0mdef test(x:Int,expected:Int, s:String): Unit = {[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:41: expected class or object definition[0m
+[0m[[31merror[0m] [0mval a = getSquare(3)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:42: expected class or object definition[0m
+[0m[[31merror[0m] [0mprintln(a)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:43: expected class or object definition[0m
+[0m[[31merror[0m] [0massert(a == 9, "Expected 9, Got " + a)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:44: expected class or object definition[0m
+[0m[[31merror[0m] [0mtest(3,9,"Inside getSquare")[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:46: expected class or object definition[0m
+[0m[[31merror[0m] [0mval b = getSquare(6)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:47: expected class or object definition[0m
+[0m[[31merror[0m] [0mtest(6,36,"Inside getSquare")[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:48: expected class or object definition[0m
+[0m[[31merror[0m] [0massert(b == 36, "expected " + 36 + " Got " + b)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:50: expected class or object definition[0m
+[0m[[31merror[0m] [0mval c = getSquare(5); [0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:51: expected class or object definition[0m
+[0m[[31merror[0m] [0mtest(5,25,"Inside getSquare")[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:52: expected class or object definition[0m
+[0m[[31merror[0m] [0massert(c == 25, "expected " + 25 + " Got " + c)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:55: expected class or object definition[0m
+[0m[[31merror[0m] [0massert(1 < 2)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:58: expected class or object definition[0m
+[0m[[31merror[0m] [0mdef getSquareDouble(num: Double): Double = {[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:61: expected class or object definition[0m
+[0m[[31merror[0m] [0mval sd1 = getSquareDouble(1.2)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:62: expected class or object definition[0m
+[0m[[31merror[0m] [0mprintln(sd1)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:63: expected class or object definition[0m
+[0m[[31merror[0m] [0massert(1.44 == sd1, "Expected 1.44, Got " + sd1)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:65: expected class or object definition[0m
+[0m[[31merror[0m] [0m"""[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:75: expected class or object definition[0m
+[0m[[31merror[0m] [0mval sd2 = getSquareDouble(5.7) [0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:76: expected class or object definition[0m
+[0m[[31merror[0m] [0mprintln(sd2)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:77: expected class or object definition[0m
+[0m[[31merror[0m] [0massert(32.49 == sd2, "expected 32.49, Got " + sd2)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:80: expected class or object definition[0m
+[0m[[31merror[0m] [0mdef isArgGreaterThanArg2(num1:Double, num2:Double) :Boolean = {[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:87: expected class or object definition[0m
+[0m[[31merror[0m] [0mval t1 = isArgGreaterThanArg2(4.1, 4.12)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:88: expected class or object definition[0m
+[0m[[31merror[0m] [0mprintln(t1)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:89: expected class or object definition[0m
+[0m[[31merror[0m] [0massert(t1 == false, "Expected false, Got " + t1)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:90: expected class or object definition[0m
+[0m[[31merror[0m] [0mval t2 = isArgGreaterThanArg2(2.1, 1.2)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:91: expected class or object definition[0m
+[0m[[31merror[0m] [0mprintln(t2)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:92: expected class or object definition[0m
+[0m[[31merror[0m] [0massert(t2 == true, "Expected true, Got " + t2)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:95: expected class or object definition[0m
+[0m[[31merror[0m] [0mdef getMe(a:String): String = {[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:99: expected class or object definition[0m
+[0m[[31merror[0m] [0mval g1 = getMe("abraCaDabra")[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:100: expected class or object definition[0m
+[0m[[31merror[0m] [0mprintln(g1)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:101: expected class or object definition[0m
+[0m[[31merror[0m] [0massert(g1 == "abracadabra", "Expected 'abracadabra', Got " + g1)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:102: expected class or object definition[0m
+[0m[[31merror[0m] [0mval g2 = getMe("zxyVUT")[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:103: expected class or object definition[0m
+[0m[[31merror[0m] [0mprintln(g2)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:104: expected class or object definition[0m
+[0m[[31merror[0m] [0massert( g2 == "zxyvut", "Expected 'zxyvut', Got " + g2)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:107: expected class or object definition[0m
+[0m[[31merror[0m] [0mdef addStrings(arg1:String, arg2:String):String = {[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:110: expected class or object definition[0m
+[0m[[31merror[0m] [0mval s1 = addStrings("abc", "def")[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:111: expected class or object definition[0m
+[0m[[31merror[0m] [0mprintln(s1)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:112: expected class or object definition[0m
+[0m[[31merror[0m] [0massert(s1 == "abcdef", "Expected 'abcdef', Got " + s1)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:113: expected class or object definition[0m
+[0m[[31merror[0m] [0mval s2 = addStrings("zyx", "abc")[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:114: expected class or object definition[0m
+[0m[[31merror[0m] [0mprintln(s2)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:115: expected class or object definition[0m
+[0m[[31merror[0m] [0massert(s2 == "zyxabc", "Epected 'zyxabc', Got " + s2)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:118: expected class or object definition[0m
+[0m[[31merror[0m] [0mdef manyTimesString(a: String, b: Int):String = {[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:121: expected class or object definition[0m
+[0m[[31merror[0m] [0mval m1 = manyTimesString("abc", 3)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:122: expected class or object definition[0m
+[0m[[31merror[0m] [0mprintln(m1)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:123: expected class or object definition[0m
+[0m[[31merror[0m] [0massert(m1 == "abcabcabc", "Expected 'abcabcabc', Got " + m1)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:125: expected class or object definition[0m
+[0m[[31merror[0m] [0mval m2 = manyTimesString("123", 2)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:126: expected class or object definition[0m
+[0m[[31merror[0m] [0mprintln(m2)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:127: expected class or object definition[0m
+[0m[[31merror[0m] [0massert(m2 == "123123", "Expected '123123', Got " + m1)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:130: expected class or object definition[0m
+[0m[[31merror[0m] [0mdef bmiStatus(weight:Double, height:Double):String = {[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:141: expected class or object definition[0m
+[0m[[31merror[0m] [0mval normal = bmiStatus(160, 68)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:142: expected class or object definition[0m
+[0m[[31merror[0m] [0mprintln(normal)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:143: expected class or object definition[0m
+[0m[[31merror[0m] [0massert("Normal weight" == normal,[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:146: expected class or object definition[0m
+[0m[[31merror[0m] [0mval overweight = bmiStatus(180, 60)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:147: expected class or object definition[0m
+[0m[[31merror[0m] [0mprintln(overweight)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:148: expected class or object definition[0m
+[0m[[31merror[0m] [0massert("Overweight" == overweight, "Expected Overweight, Got " + overweight)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:150: expected class or object definition[0m
+[0m[[31merror[0m] [0mval underweight = bmiStatus(100, 68) [0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:151: expected class or object definition[0m
+[0m[[31merror[0m] [0mprintln(underweight)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/syves/github.com/algorithms/atomic_methods.scala:152: expected class or object definition[0m
+[0m[[31merror[0m] [0massert("Underweight" == underweight, "Expected Underweight, Got " + underweight)[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m91 errors found[0m
+[0m[[0mdebug[0m] [0mCompilation failed (CompilerInterface)[0m
+[0m[[31merror[0m] [0m(compile:[31mcompileIncremental[0m) Compilation failed[0m

@@ -1,3 +1,7 @@
 printLn("oh, hi")
 println("oh, hi")
 console
+scalaFuncs.scala
+run scalaFuncs.scala
+ scalaFuncs.scala
+console
