@@ -10,6 +10,15 @@ object funcs {
     for (elem <- l) res = f(res, elem)
     res
   }
+
+  //def traverse_[A, B](l: List[A], acc: B)(f: (B, A) => B): B = {
+    //fold_
+  //}
+  def flatMap_[A, B](f: (A) => List[B], l: List[A]): List[B] = {
+    var list = List[B]()
+    l.foreach {(i) => list = list ++ f(i)} 
+    list
+  }
 }
 
 //fold_(List("1", "3", "4"), 0) ((acc, a) => acc + a.toInt))
