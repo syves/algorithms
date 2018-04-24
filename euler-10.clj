@@ -12,25 +12,24 @@
 
 (prime? 7) ;true
 (prime? 6) ;false
+(prime? 10000)
 
 ;while sum is <2 million find the next prime and add it to acc
 
-;how to find the next prime? add one to the current number and check to see
-;if it is primes
-
-(= false (prime? (inc 6)))
-
-;is there a specicial case for 1?
-;let [m-prime (+ curr-prime 1)]
-(defn maybe-prime [num](inc num))
+;if it is not prime  find the next prime else return the prime
 (defn getNextPrime
   [num]
-  ;if it is not prime  find the next prime else return the prime
-  (if (= false (prime? (inc num))) (getNextPrime num) (inc num)))
+  (loop [num num]
+    (let [maybe-prime (inc num)]
+      (if (prime? maybe-prime)
+          maybe-prime
+          (recur maybe-prime)))))
 
-(getNextPrime 7)
+(getNextPrime 7);"false 8"
+(getNextPrime 6);"true 7"
 
 (defn sumPrimes
   [max-num]
-  (let [acc 0]
-    if (< acc max-num) (if prime? (+ acc 1)) (+ acc curremtPrime)  )    acc ) )
+  (let [acc 0
+        num 0]
+    if (< acc max-num) (+ acc (getNextPrime num))) (+ acc curremtPrime)) acc) )
