@@ -1,6 +1,6 @@
 (ns "euler-problem-10")
 ;The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
-;1. Find the sum of all the primes below two million.
+;1. Find the sum of (all the primes below two million).
 
 ;A. find factors
 ;B. find a prime
@@ -13,9 +13,10 @@
 (factors? 6) ;(6 3 2 3/2 6/5 1)
 (factors? 7) ;(7 7/2 7/3 7/4 7/5 7/6 1)
 
-(defn prime? [num] (if (= num 1)
-                       false
-                       (empty? (remove #{list num 1} (filter integer? (factors? num))))))
+(defn prime? [num]
+             (if (= num 1)
+                 false
+                 (empty? (remove #{list num 1} (filter integer? (factors? num))))))
 (prime? 1) ;false
 (prime? 2) ;true
 (prime? 7) ;true
@@ -35,8 +36,11 @@
 
 (defn sumPrimes
   [max-num]
-  (let [acc 0 num 0]
-    (while (< acc max-num)
-            (+ acc (getNextPrime num))
-            acc)))
+  (loop [curr-total 0 curr-prime 0]
+       (let [next-prime (getNextPrime curr-prime)
+             next-total (+ curr-total next-prime)]
+              (if (< next-total max-num)
+                  (recur next-total next-prime)
+                  curr-total))))
+
 (sumPrimes 18)
