@@ -1,4 +1,4 @@
-(ns "eulerish-problem")
+(ns "eulerish_problem")
 ;The sum of the primes below n, where n is 18. is 2 + 3 + 5 + 7 = 17.
 ;1. Find the sum of primes, whose total is below two million).
 
@@ -45,9 +45,9 @@
   (loop [curr-total 0 curr-prime 0]
        (let [next-prime (get-next-prime curr-prime)
              next-total (+ curr-total next-prime)]
-              (if (< next-total max-num)
-                  (recur next-total next-prime)
-                  curr-total))))
+            (if (< next-total max-num)
+              (recur next-total next-prime)
+                curr-total))))
 
 (assert (= 17 (sum-primes 18))
-(assert (= 1999236 (sum-primes 2000000))
+(assert (= 1999236 (sum-primes 2000000000))
