@@ -6,35 +6,39 @@
 ;B. find a prime
 ;C. find next prime
 
-(defn factors? [num] (map (partial / num) (range 1 (inc num))))
+(defn factors [num] (map (partial / num) (range 1 (inc num))))
 
-(assert (= '(1) (factors? 1)) "factors of 1: (1)")
-(assert (= '(2 1) (factors? 2)) "factors of 2: (2 1)")
-(assert (= '(6 3 2 3/2 6/5 1) (factors? 6)) "factors of 6: (6 3 2 3/2 6/5 1)")
-(assert (= '(7 7/2 7/3 7/4 7/5 7/6 1) (factors? 7)) "factors of 6: (7 7/2 7/3 7/4 7/5 7/6 1)")
+(do
+  (assert (= '(1) (factors 1)) "factors of 1: (1)")
+  (assert (= '(2 1) (factors 2)) "factors of 2: (2 1)")
+  (assert (= '(6 3 2 3/2 6/5 1) (factors 6)) "factors of 6: (6 3 2 3/2 6/5 1)")
+  (assert (= '(7 7/2 7/3 7/4 7/5 7/6 1) (factors 7))
+          "factors of 6: (7 7/2 7/3 7/4 7/5 7/6 1)"))
 
 (defn prime? [num]
              (if (= num 1)
                  false
-                 (empty? (remove #{list num 1} (filter integer? (factors? num))))))
+                 (empty? (remove #{num 1} (filter integer? (factors num))))))
 
-(assert (= false (prime? 1))
-(assert (= true (prime? 2))
-(assert (= false (prime? 6))
-(assert (= true (prime? 7))
-(assert (= false (prime? 1000))
+(do
+  (assert (= false (prime? 1)))
+  (assert (= true (prime? 2)))
+  (assert (= false (prime? 6)))
+  (assert (= true (prime? 7)))
+  (assert (= false (prime? 1000))))
 
+;if you feel you need to loop recur try using reduce or map.
 (defn get-next-prime
   [num]
-  (loop [num num]
-    (let [maybe-prime (inc num)]
+  (loop [numbr num]
+    (let [maybe-prime (inc numbr)]
       (if (prime? maybe-prime)
           maybe-prime
           (recur maybe-prime)))))
-
-(assert (= 2 (get-next-prime 0))
-(assert (= 11 (get-next-prime 7))
-(assert (= 7 (get-next-prime 6))
+(do
+  (assert (= 2 (get-next-prime 0))
+  (assert (= 11 (get-next-prime 7))
+  (assert (= 7 (get-next-prime 6)))
 
 (defn sum-primes
   [max-num]
