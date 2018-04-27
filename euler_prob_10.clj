@@ -7,17 +7,38 @@
 ; Int -> List Numer ; could try using pre and post conditions
 (defn factors [num] (map (partial / num) (range 1 (inc num))))
 
+(defn faster-prime? [mp]
+  (empty?
+  (loop [maybe-prime mp maybe-factor 2 factors []]
+    ;(println maybe-prime maybe-factor)
+    (if (= false (empty? factors))
+      factors
+      (if (< maybe-factor (dec maybe-prime))
+        (recur maybe-prime
+               (inc maybe-factor)
+               (if (= 0 (mod maybe-prime maybe-factor))
+                         (cons maybe-factor factors)
+                         factors))
+        factors)))))
+
+(lazy-factor 17) ; true
+(lazy-factor 18) ;false
+
+;cons n (lazy-seq (/ maybe-prime (inc maybe-factor)
+
 ;Int -> Boolean
 (defn prime? [num]
              (if (= num 1)
                  false
                  (empty? (remove #{num 1} (filter integer? (factors num))))))
 
+;TODO: could rewrite n-primes to create a lazy sequence
+
 (defn next-prime
   [num]
   (loop [numbr num]
     (let [maybe-prime (inc numbr)]
-      (if (prime? maybe-prime)
+      (if (faster-prime? maybe-prime)
           maybe-prime
           (recur maybe-prime)))))
 
@@ -32,6 +53,7 @@
   ;(reduce + (filter prime? (range 1 (inc num)))))
 
 ; Int -> Int -> List Double
+;why cant I access Math/pow when it is inside partial and map?
 (defn n-multiples [num-multiples num]
   (map
       (partial ((memfn Math/pow) (double num)))
@@ -51,10 +73,9 @@
 
 (sum-primes 4)
 (sum-primes 5)
-;I haven't yet thought of a way to make this efficient for large numbers.
-;800 primes was relatively fast. but 10,000 took longer than 10 minutes,
-;it seems the larger the number the less likely it is to be prime,
-;so more checking has to be done to capture fewer primes.
+(sum-primes 1000)
+(sum-primes 10000); around 2 minutes
+
 ;maybe we should store each prime in a map. and exclude all mutiple of that prime from checking?
 ;we would not need to factor it or filter it.
 ;are most numbers divisable by 2, 3, 5, 7, 11, 13,
@@ -63,6 +84,7 @@
 ; if it in dictionary? it is a multiple of a prime we have already found
 ;is it divisable by a larger even number than it is divied by 2,
 ;[2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17...54]
+;do prime numbers have a real root?
 
 
 ;(sum-primes 2000000)
