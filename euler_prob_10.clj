@@ -60,22 +60,9 @@
       (range 2.0 (inc num-multiples)) ))
 (n-multiples 2 3)
 
-(defn primes-with-memo [num]
-  (println (count (keys prime-multiples)))
-  (loop [num-primes num sum 0 curr-prime 2 prime-multiples {}]
-    (let multiples []
-
-    (prime-multiples assoc curr-prime))
-    (if (zero? num-primes)
-        sum
-        (recur (dec num-primes) (+ sum curr-prime) (next-prime curr-prime)))))
-
 
 (sum-primes 4)
 (sum-primes 5)
 (sum-primes 1000)
 ;(sum-primes 10000); around 2 minutes
 ;(sum-primes 2000000)
-
-
-;do prime numbers have a real root?
