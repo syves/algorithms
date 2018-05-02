@@ -4,9 +4,6 @@
 ;The sum of the primes below n. is 2 + 3 + 5 + 7 = 17.
 ;1. Find the sum of primes below two million).
 
-; Int -> List Numer ; could try using pre and post conditions
-;(defn factors [num] (map (partial / num) (range 1 (inc num))))
-
 ;TODO nested ifs are gross, why isnt there an else if?
 ;TODO make prime check faster. Prime numbers have an irrational root, but there is no irrational type in Java that I can find. And one cannot simply square the root of n and compare it to N, because of precision loss on non primes as well.
 
@@ -27,12 +24,6 @@
 (faster-prime? 17) ; true
 (faster-prime? 18) ;false
 
-;Int -> Boolean
-(defn prime? [num]
-             (if (= num 1)
-                 false
-                 (empty? (remove #{num 1} (filter integer? (factors num))))))
-
 (defn next-prime
   [num]
   (loop [numbr num]
@@ -49,20 +40,25 @@
         sum
         (recur (dec num-primes) (+ sum curr-prime) (next-prime curr-prime)))))
 
-;TODO how to make sumprimes lazy.. call next prime indef and then take of num-primes
-(defn natural-nums  [n] (lazy-seq (cons n (natural-nums (inc n)))))
+(defn n-primes-lazy [prime] (lazy-seq (cons prime (n-primes-lazy (next-prime prime)))))
+(take 5 (n-primes-lazy 2)) ;(2 3 5 7 11)
+(reduce + (take 5 (n-primes-lazy 2)))
+
+;this is not really a good case for laziness just we know exactly how many we want
+(defn lazy-sum-primes [num-primes] (reduce + (take num-primes (n-primes-lazy 2))))
+(lazy-sum-primes 1000)
+(lazy-sum-primes 10000) ;slightly over 2 minutes
 
 ; Int -> Int -> List Double
 ;why cant I access Math/pow when it is inside partial and map?
-(defn n-multiples [num-multiples num]
-  (map
-      (partial ((memfn Math/pow) (double num)))
-      (range 2.0 (inc num-multiples)) ))
-(n-multiples 2 3)
-
+;(defn n-multiples [num-multiples num]
+;  (map
+;      (partial ((memfn Math/pow) (double num)))
+;      (range 2.0 (inc num-multiples)) ))
+;(n-multiples 2 3)
 
 (sum-primes 4)
 (sum-primes 5)
-(sum-primes 1000)
+;(sum-primes 1000)
 ;(sum-primes 10000); around 2 minutes
 ;(sum-primes 2000000)
