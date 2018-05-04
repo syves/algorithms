@@ -19,23 +19,21 @@
 ;huge work reduction here.
 ;to find the next factor we would check
 ;everytime we check primes that we have already found: 2,3,5,7,11,17,19
-;we check (2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21)
+;we check (2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21, 22)
 ;in this case we reduce the work by at 1/4,
 
 ;Int -> Boolean
-;TODO add factors as an argument to loop
-;TODO find a way to reove factors
+;TODO add factors map as an argument to loop
 
 (defn faster-prime? [maybe-prime]
-  (loop [maybe-factor 2 factors false]
-    (if (= true factors) ;we found the first factor, escape loop
-      false
-      (if (< maybe-factor (Math/floor (Math/sqrt maybe-prime)))
-          (recur  ; arg1
-               (inc maybe-factor) ;arg2
-               (= 0 (mod maybe-prime maybe-factor)))
-          true))))
+  (loop [maybe-factor 2]
+      (or (> maybe-factor (Math/sqrt maybe-prime))
+          (if-not (= 0 (mod maybe-prime maybe-factor))
+              (recur (inc maybe-factor))
+              false))))
+;(defn prime2) try storing primes...
 
+(faster-prime? 5)
 (faster-prime? 17) ; true
 (faster-prime? 18) ;false
 
