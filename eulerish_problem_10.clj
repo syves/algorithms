@@ -7,13 +7,15 @@
 ;C. find next prime
 
 (defn factors [num] (map (partial / num) (range 1 (inc num))))
+(range 2 22) 
+(filter integer? (factors 23))
 
 (do
   (assert (= '(1) (factors 1)) "factors of 1: (1)")
   (assert (= '(2 1) (factors 2)) "factors of 2: (2 1)")
   (assert (= '(6 3 2 3/2 6/5 1) (factors 6)) "factors of 6: (6 3 2 3/2 6/5 1)")
   (assert (= '(7 7/2 7/3 7/4 7/5 7/6 1) (factors 7))
-          "factors of 6: (7 7/2 7/3 7/4 7/5 7/6 1)"))
+          "factors of 6: (7 7/2 7/3 7/4 7/5 7/6 1)")))
 
 (defn prime? [num]
              (if (= num 1)
