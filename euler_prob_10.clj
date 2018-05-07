@@ -13,6 +13,32 @@
           )))
 (memo-prime (memo-prime [2 3 5]))
 
+;not substantially faster...
+(defn memo-prime2 [primes]
+    (loop [maybe-prime (inc (last primes))]
+    ;some should return the first logical true
+      (if (not= true (some (fn [x] (= 0 (mod maybe-prime x))) primes))
+            (conj primes maybe-prime)
+          (recur (inc maybe-prime)))))
+(memo-prime2 (memo-prime2 [2 3 5]))
+
+;maybe I should try to escape checking if all are true?
+(defn primex [n]
+  (let [factors [2 3 5 7 11 13 17] maybe-prime n]
+      (some (fn [x] (if (= true (= 0 (mod maybe-prime x))) x false)) factors)))
+(primex 6) ;true
+(primex 101) ;nil
+
+(defn n-primes [n]
+  (loop [primes [2] cnt 1]
+    (if (= n cnt)
+      primes
+    (recur (memo-prime2 primes) (inc cnt)))))
+  (n-primes 4)
+  (n-primes 1000)
+  (n-primes 10000) ;8
+  (n-primes 100000)
+
 (defn faster-prime? [maybe-prime]
   (loop [maybe-factor 2]
       (or (> maybe-factor (Math/sqrt maybe-prime))
@@ -23,6 +49,7 @@
 (faster-prime? 5)
 (faster-prime? 17) ; true
 (faster-prime? 18) ;false
+(faster-prime? 101)
 
 ;finds a single prime number
 (defn next-prime
