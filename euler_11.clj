@@ -46,25 +46,16 @@
           (nth nums (- pos 19) 0)
           (nth nums (- pos 19) 0)
           (nth nums (- pos 19) 0))
-          )))
+          )
+          ;plus ( + (* lastidx 20) 1)
       (defn diag-r [pos]
-        (* (nth nums (+ pos 0) 0)
-          (nth nums (+ pos 21) 0)
-          (nth nums (+ pos 42) 0)
-          (nth nums (+ pos 63) 0))
-          )))
+          (reduce * (map (fn [x] (nth nums (+ pos x) 0)) [0 21 42 63])))
+          ;( timedo 4 (+ idx 21)
       (defn down [pos]
-        (* (nth nums (+ pos 0) 0)
-          (nth nums (+ pos 20) 0)
-          (nth nums (+ pos 40) 0)
-          (nth nums (+ pos 60) 0))
-          ))
+          (reduce * (map (fn [x] (nth nums (+ pos x) 0)) [0 20 40 60])))
+
+      ;this one works
       (defn right [pos]
-        ;(* (nth nums (+ pos 0) 0)
-        ;    (nth nums (+ pos 1) 0)
-        ;    (nth nums (+ pos 2) 0)
-        ;    (nth nums (+ pos 3) 0))
-        ;    )
         (reduce * (map (fn [x] (nth nums (+ pos x) 0)) [0 1 2 3])))
 
       (if (= idx (count nums))
