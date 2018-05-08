@@ -23,49 +23,73 @@
 20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54
 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48")
 
+(def teststr
+"08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
+49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00
+81 49 31 73 55 79 14 29 93 71 99 67 53 88 30 03 49 13 36 65
+52 70 95 23 04 60 11 42 69 24 100 56 01 32 56 71 37 02 36 91
+22 31 16 71 51 67 63 89 41 92 100 54 22 40 40 28 66 33 13 80
+24 47 32 60 99 03 45 02 44 75 100 100 99 99 84 20 35 17 12 50
+32 98 81 28 64 23 67 10 26 99 40 67 59 54 70 66 18 38 64 70
+67 26 20 68 02 62 99 20 99 63 94 39 63 08 40 91 66 49 94 21
+24 55 58 05 66 73 99 99 97 17 78 78 96 83 14 88 34 89 63 72
+21 36 23 09 75 00 76 44 99 45 35 14 00 61 33 97 34 31 33 95
+78 17 53 28 22 75 31 67 15 99 03 80 04 62 16 14 09 53 56 92
+16 39 05 42 96 35 31 47 55 58 88 24 00 17 54 24 36 29 85 57
+86 56 00 48 35 71 89 07 05 44 44 37 44 60 21 58 51 54 17 58
+19 80 81 68 05 94 47 69 28 73 92 13 86 52 17 77 04 89 55 40
+04 52 08 83 97 35 99 16 07 97 57 32 16 26 26 79 33 27 98 66
+88 36 68 87 57 62 20 72 03 46 33 67 46 55 12 32 63 93 53 69
+04 42 16 73 38 25 39 11 24 94 72 18 08 46 29 32 40 62 76 36
+20 69 36 41 72 30 23 88 34 62 99 69 82 67 59 85 74 04 36 16
+20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54
+01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48")
+
 (defn str-to-int [lstr] (map (fn [x] (Integer. x)) (split lstr  #"\s+")))
 (str-to-int bigstr)
-(str-to-int "3 6 7")
 
-;(nth [4 5 6 7] 4 0) handling out of bounds
-;return a zero then use that value and multiply get back                 zero.
-;maybe there should be a function that takes a string/grid of anysize and determines what the grid dimentions are. sqrt count str-to-int grid
+(defn indexes [num-vals offset]
+  (map (fn [x] (* offset x)) (range 0 num-vals)))
 
-;could make chunk an arg and creat a rang of size n.
-(defn safe-get-right [pos nums] (map (fn [x] (nth nums (+ pos x) 0)) [0 1 2 3]))
-(reduce * (safe-get-right 0 [1 2 5 7 8])) ;70
-;would a do-while serve? how to pass around product?
+(indexes 4 1) ;(0 1 2 3)
+(indexes 4 19)  ;(0 19 38 57)
+
+(defn n-vals [pos col num-vals offset]
+  (map (fn [x] (nth col (+ pos x) 0))
+       (indexes num-vals offset)))
+
+(n-vals 0 [6 7 8 2 0 6 9 88 7] 4 2) ;(6 8 0 9)
+(n-vals 0 [6 7 8 2 0 6 9 88 7] 4 7) ;(6 88 0 0)
 
 ;str -> int
 (defn largest-product [grid]
   (let [nums (str-to-int grid)]
     (loop [largest-product 0 idx 0]
-      ;can I define a fn here?
-      (defn diag-l [pos]
-        (* (nth nums (- pos 0) 0)
-          (nth nums (- pos 19) 0)
-          (nth nums (- pos 19) 0)
-          (nth nums (- pos 19) 0))
-          )
-          ;plus ( + (* lastidx 20) 1)
-      (defn diag-r [pos]
-          (reduce * (map (fn [x] (nth nums (+ pos x) 0)) [0 21 42 63])))
-          ;( timedo 4 (+ idx 21)
-      (defn down [pos]
-          (reduce * (map (fn [x] (nth nums (+ pos x) 0)) [0 20 40 60])))
 
-      ;this one works
-      (defn right [pos]
-        (reduce * (map (fn [x] (nth nums (+ pos x) 0)) [0 1 2 3])))
+      (defn diag-l [idx num-vals offset]
+        (reduce * (n-vals idx nums 4 19)))
+      (defn diag-r [idx num-vals offset]
+        (reduce * (n-vals idx nums 4 21)))
+      (defn down [idx num-vals offset]
+        (reduce * (n-vals idx nums 4 20)))
+      (defn right [idx num-vals offset]
+        (reduce * (n-vals idx nums 4 1)))
 
       (if (= idx (count nums))
           largest-product
           (recur
-            ;largest-product
-            (max largest-product (right idx) (down idx) (diag-l idx) (diag-r idx))
+            (max largest-product
+                 (right idx 4 1)
+                 (down idx 4 20)
+                 (diag-l idx 4 19)
+                 (diag-r idx 4 21))
             (inc idx))
-    ;c)
       ))))
-(largest-product "3 6 7 8 9 10 11 8 0 5 7")
-(* 8 9 10 11)
-   ;(reduce (fn [x] ()) grid)))
+
+(largest-product teststr)
+(largest-product bigstr)
+
+(* 99 99 99 99) ;96059601 diag-r
+(* 99 99 99 100) ;97029900 diag-l
+(* 99 99 100 100) ;98010000 R
+(* 99 100 100 100) ;99000000 D
