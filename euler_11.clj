@@ -1,6 +1,8 @@
 (ns euler_11)
 (use '[clojure.string :only (split triml)])
-(def bigstr "08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
+
+(def bigstr
+"08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00
 81 49 31 73 55 79 14 29 93 71 40 67 53 88 30 03 49 13 36 65
 52 70 95 23 04 60 11 42 69 24 68 56 01 32 56 71 37 02 36 91
@@ -21,7 +23,58 @@
 20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54
 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48")
 
+(defn str-to-int [lstr] (map (fn [x] (Integer. x)) (split lstr  #"\s+")))
+(str-to-int bigstr)
+(str-to-int "3 6 7")
 
-(defn to-str [lstr] (map (fn [x] (Integer. x)) (split lstr  #"\s+")))
+;(nth [4 5 6 7] 4 0) handling out of bounds
+;return a zero then use that value and multiply get back                 zero.
+;maybe there should be a function that takes a string/grid of anysize and determines what the grid dimentions are. sqrt count str-to-int grid
 
-(to-str bigstr)
+;could make chunk an arg and creat a rang of size n.
+(defn safe-get-right [pos nums] (map (fn [x] (nth nums (+ pos x) 0)) [0 1 2 3]))
+(reduce * (safe-get-right 0 [1 2 5 7 8])) ;70
+;would a do-while serve? how to pass around product?
+
+;str -> int
+(defn largest-product [grid]
+  (let [nums (str-to-int grid)]
+    (loop [largest-product 0 idx 0]
+      ;can I define a fn here?
+      (defn diag-l [pos]
+        (* (nth nums (- pos 0) 0)
+          (nth nums (- pos 19) 0)
+          (nth nums (- pos 19) 0)
+          (nth nums (- pos 19) 0))
+          )))
+      (defn diag-r [pos]
+        (* (nth nums (+ pos 0) 0)
+          (nth nums (+ pos 21) 0)
+          (nth nums (+ pos 42) 0)
+          (nth nums (+ pos 63) 0))
+          )))
+      (defn down [pos]
+        (* (nth nums (+ pos 0) 0)
+          (nth nums (+ pos 20) 0)
+          (nth nums (+ pos 40) 0)
+          (nth nums (+ pos 60) 0))
+          ))
+      (defn right [pos]
+        ;(* (nth nums (+ pos 0) 0)
+        ;    (nth nums (+ pos 1) 0)
+        ;    (nth nums (+ pos 2) 0)
+        ;    (nth nums (+ pos 3) 0))
+        ;    )
+        (reduce * (map (fn [x] (nth nums (+ pos x) 0)) [0 1 2 3])))
+
+      (if (= idx (count nums))
+          largest-product
+          (recur
+            ;largest-product
+            (max largest-product (right idx) (down idx) (diag-l idx) (diag-r idx))
+            (inc idx))
+    ;c)
+      ))))
+(largest-product "3 6 7 8 9 10 11 8 0 5 7")
+(* 8 9 10 11)
+   ;(reduce (fn [x] ()) grid)))
