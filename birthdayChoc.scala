@@ -2,7 +2,7 @@
 object choc {
 def birthday(s: Array[Int], d: Int, m: Int): Int = {
     if( s.size > 1)
-    s.sliding(m, m-1).filter(chunk => chunk.sum == d).size
+    s.sliding(m, 1).filter(chunk => chunk.sum == d).size
     else
     if (s(0)== d) 1 else 0
 }
