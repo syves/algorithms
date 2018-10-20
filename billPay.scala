@@ -12,4 +12,4 @@ object Solution {
 
 }
 import Solution._
-bonAppetit(Array(3, 10, 2, 9), 1, 12)
+bonAppetit(Array(3, 10, 2, 9), 1, 12) //5
